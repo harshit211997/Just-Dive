@@ -4,14 +4,18 @@ using UnityEngine.UI;
 
 public class QuadController : MonoBehaviour {
 
-	public GameObject textObject;
+	public GameObject commentTextObject;
+	public GameObject flipTextObject;
+
 	public GameObject canvas;
 
-	private Text text;
+	private Text commentText;
+	private Text fliptext;
 
 	void OnTriggerEnter(Collider other) {
 
-		text = textObject.GetComponent<Text> ();
+		commentText = commentTextObject.GetComponent<Text> ();
+		fliptext = flipTextObject.GetComponent<Text> ();
 
 		if (other.gameObject.tag == "Player") {
 			float rotX = other.gameObject.transform.eulerAngles.x;
@@ -19,10 +23,11 @@ public class QuadController : MonoBehaviour {
 			float rotY = other.gameObject.transform.eulerAngles.y;
 
 			if ((rotX < 30 || rotX > 330 && rotX < 360)) {
-				text.text = "Nice!";
+				commentText.text = "Awesome!";
 			} else {
-				text.text = "Flopped";
+				commentText.text = "Flopped";
 			}
+			fliptext.text = "Flips : " + Jump.getFullFlips ();
 		}
 	}
 
@@ -31,7 +36,7 @@ public class QuadController : MonoBehaviour {
 			canvas.SetActive (true);
 		}
 		if (Jump.getState () == Jump.State.WIND) {
-			text.text = "Still tucking!";
+			commentText.text = "Still tucking!";
 		}
 		CameraController.isFollowingPlayer = false;
 	}

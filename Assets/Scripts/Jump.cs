@@ -9,6 +9,9 @@ public class Jump : MonoBehaviour {
 
 	private float speed = 6f;
 	private Rigidbody rigidBody;
+	private float currentRotation;
+	private float previousRotation = 90f;
+	private static float fullflips = 0;
 
 	public enum State {
 		IDLE, JUMP, WIND, UNWIND, INWATER
@@ -17,6 +20,7 @@ public class Jump : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		fullflips = 0;
 		animator = GetComponent<Animator> ();
 		rigidBody = GetComponent<Rigidbody> ();
 		state = State.IDLE;
@@ -50,6 +54,14 @@ public class Jump : MonoBehaviour {
 			}
 			rigidBody.angularVelocity = -Vector3.forward * angularSpeedL;
 		}
+
+		//For calculating full rotations of the object
+		currentRotation = transform.eulerAngles.y;
+		if (previousRotation == 90 && currentRotation == 270 || previousRotation == 270 && currentRotation == 90) {
+			fullflips += 0.5f;
+			Debug.Log (fullflips);
+		}
+		previousRotation = currentRotation;
 	}
 
 	void OnCollisionEnter(Collision col) {
@@ -57,6 +69,10 @@ public class Jump : MonoBehaviour {
 			state = State.INWATER;
 			animator.SetTrigger ("unwind");
 		}
+	}
+
+	public static float getFullFlips() {
+		return fullflips;
 	}
 
 	void jump() { 
