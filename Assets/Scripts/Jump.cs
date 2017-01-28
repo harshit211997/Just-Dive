@@ -7,10 +7,10 @@ public class Jump : MonoBehaviour {
 	public float angularSpeedH = 200f;
 	private Animator animator;
 
-	private float speed = 6f;
+	private float speed = 8f;
 	private Rigidbody rigidBody;
 	private float currentRotation;
-	private float previousRotation = 90f;
+	private float previousRotation;
 	private static float fullflips = 0;
 
 	public enum State {
@@ -20,6 +20,7 @@ public class Jump : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		previousRotation = 90f;
 		fullflips = 0;
 		animator = GetComponent<Animator> ();
 		rigidBody = GetComponent<Rigidbody> ();
@@ -38,36 +39,40 @@ public class Jump : MonoBehaviour {
 			if (Input.GetMouseButton (0)) {
 				state = State.WIND;
 				animator.SetTrigger ("wind");
+				Invoke ("rotateFast", 0.3f);
 			}
-			rigidBody.angularVelocity = -Vector3.forward * angularSpeedL;
 		} else if (state == State.WIND) {
 
 			if (!Input.GetMouseButton (0)) {
 				state = State.UNWIND;
+				if (animator.GetBool ("wind")) {
+					animator.ResetTrigger ("wind");
+				}
 				animator.SetTrigger ("unwind");
+				rigidBody.angularVelocity = -Vector3.forward * angularSpeedL;
 			}
-			rigidBody.angularVelocity = -Vector3.forward * angularSpeedH;
 		} else if (state == State.UNWIND) {
 			if (Input.GetMouseButton (0)) {
 				state = State.WIND;
 				animator.SetTrigger ("wind");
+				Invoke ("rotateFast", 0.3f);
 			}
-			rigidBody.angularVelocity = -Vector3.forward * angularSpeedL;
 		}
 
 		//For calculating full rotations of the object
 		currentRotation = transform.eulerAngles.y;
-		if (previousRotation == 90 && currentRotation == 270 || previousRotation == 270 && currentRotation == 90) {
+		if (Mathf.Abs(previousRotation - currentRotation) > 150) {
 			fullflips += 0.5f;
-			Debug.Log (fullflips);
 		}
 		previousRotation = currentRotation;
+
+		//Apply gravity
+		GetComponent<Rigidbody> ().AddForce(new Vector3(0, -10, 0));
 	}
 
 	void OnCollisionEnter(Collision col) {
 		if (col.gameObject.tag == "pool") {
 			state = State.INWATER;
-			animator.SetTrigger ("unwind");
 		}
 	}
 
@@ -76,8 +81,13 @@ public class Jump : MonoBehaviour {
 	}
 
 	void jump() { 
-		rigidBody.velocity = (Vector3.right + Vector3.up) * speed;
 		state = State.JUMP;
+		rigidBody.velocity = (Vector3.right + 1.1f * Vector3.up) * speed;
+		rigidBody.angularVelocity = -Vector3.forward * angularSpeedL;
+	}
+
+	void rotateFast() {
+		rigidBody.angularVelocity = -Vector3.forward * angularSpeedH;
 	}
 
 	public static State getState() {

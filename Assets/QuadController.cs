@@ -6,13 +6,15 @@ public class QuadController : MonoBehaviour {
 
 	public GameObject commentTextObject;
 	public GameObject flipTextObject;
-
+	public GameObject splash;
 	public GameObject canvas;
 
 	private Text commentText;
 	private Text fliptext;
 
 	void OnTriggerEnter(Collider other) {
+
+		splash.GetComponent<ParticleSystem> ().Play ();
 
 		commentText = commentTextObject.GetComponent<Text> ();
 		fliptext = flipTextObject.GetComponent<Text> ();

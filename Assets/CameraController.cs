@@ -26,7 +26,7 @@ public class CameraController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (isFollowingPlayer) {
-			transform.position = Vector3.SmoothDamp (transform.position, targetPosition, ref velocity, 1f);
+			transform.position = Vector3.SmoothDamp (transform.position, targetPosition, ref velocity, 0.5f);
 			Transform target = gameObject.GetComponent<Transform> ();
 			targetPosition = new Vector3 (
 				target.position.x + 10,
@@ -34,7 +34,7 @@ public class CameraController : MonoBehaviour {
 				target.position.z - distance
 			);
 		} else {
-			transform.position = Vector3.SmoothDamp (transform.position, initialPosition, ref velocity, 1f);
+			transform.position = Vector3.SmoothDamp (transform.position, initialPosition, ref velocity, 0.5f);
 		}
 	} 
 
