@@ -6,12 +6,50 @@ ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Armature
+    100004: Bob
+    100006: Bone
+    100008: Bone_007
+    100010: Chest
+    100012: foot_L
+    100014: foot_R
+    100016: head
+    100018: Lower_Arm_L
+    100020: Lower_Arm_R
+    100022: Lower_Leg_L
+    100024: Lower_Leg_R
+    100026: Root
+    100028: Stomach
+    100030: Upper_Leg_L
+    100032: Upper_Leg_R
     400000: //RootNode
+    400002: Armature
+    400004: Bob
+    400006: Bone
+    400008: Bone_007
+    400010: Chest
+    400012: foot_L
+    400014: foot_R
+    400016: head
+    400018: Lower_Arm_L
+    400020: Lower_Arm_R
+    400022: Lower_Leg_L
+    400024: Lower_Leg_R
+    400026: Root
+    400028: Stomach
+    400030: Upper_Leg_L
+    400032: Upper_Leg_R
     2300000: //RootNode
     3300000: //RootNode
     4300000: Bob
     7400000: Default Take
+    7400002: ArmatureAction
+    7400004: idle
+    7400006: jump
+    7400008: unwind
+    7400010: wind
     9500000: //RootNode
+    13700000: Bob
   materials:
     importMaterials: 1
     materialName: 0
@@ -32,7 +70,317 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: idle
+      takeName: ArmatureAction
+      firstFrame: -1
+      lastFrame: 17
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Root
+        weight: 1
+      - path: Armature/Root/Stomach
+        weight: 1
+      - path: Armature/Root/Stomach/Bone
+        weight: 1
+      - path: Armature/Root/Stomach/Bone/Lower_Arm_R
+        weight: 1
+      - path: Armature/Root/Stomach/Bone_007
+        weight: 1
+      - path: Armature/Root/Stomach/Bone_007/Lower_Arm_L
+        weight: 1
+      - path: Armature/Root/Stomach/Chest
+        weight: 1
+      - path: Armature/Root/Stomach/Chest/head
+        weight: 1
+      - path: Armature/Root/Stomach/Upper_Leg_L
+        weight: 1
+      - path: Armature/Root/Stomach/Upper_Leg_L/Lower_Leg_L
+        weight: 1
+      - path: Armature/Root/Stomach/Upper_Leg_L/Lower_Leg_L/foot_L
+        weight: 1
+      - path: Armature/Root/Stomach/Upper_Leg_L/Lower_Leg_L/foot_R
+        weight: 1
+      - path: Armature/Root/Stomach/Upper_Leg_R
+        weight: 1
+      - path: Armature/Root/Stomach/Upper_Leg_R/Lower_Leg_R
+        weight: 1
+      - path: Bob
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: ArmatureAction
+      takeName: ArmatureAction
+      firstFrame: -1
+      lastFrame: 89
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Root
+        weight: 1
+      - path: Armature/Root/Stomach
+        weight: 1
+      - path: Armature/Root/Stomach/Bone
+        weight: 1
+      - path: Armature/Root/Stomach/Bone/Lower_Arm_R
+        weight: 1
+      - path: Armature/Root/Stomach/Bone_007
+        weight: 1
+      - path: Armature/Root/Stomach/Bone_007/Lower_Arm_L
+        weight: 1
+      - path: Armature/Root/Stomach/Chest
+        weight: 1
+      - path: Armature/Root/Stomach/Chest/head
+        weight: 1
+      - path: Armature/Root/Stomach/Upper_Leg_L
+        weight: 1
+      - path: Armature/Root/Stomach/Upper_Leg_L/Lower_Leg_L
+        weight: 1
+      - path: Armature/Root/Stomach/Upper_Leg_L/Lower_Leg_L/foot_L
+        weight: 1
+      - path: Armature/Root/Stomach/Upper_Leg_L/Lower_Leg_L/foot_R
+        weight: 1
+      - path: Armature/Root/Stomach/Upper_Leg_R
+        weight: 1
+      - path: Armature/Root/Stomach/Upper_Leg_R/Lower_Leg_R
+        weight: 1
+      - path: Bob
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: jump
+      takeName: ArmatureAction
+      firstFrame: 19
+      lastFrame: 36
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Root
+        weight: 1
+      - path: Armature/Root/Stomach
+        weight: 1
+      - path: Armature/Root/Stomach/Bone
+        weight: 1
+      - path: Armature/Root/Stomach/Bone/Lower_Arm_R
+        weight: 1
+      - path: Armature/Root/Stomach/Bone_007
+        weight: 1
+      - path: Armature/Root/Stomach/Bone_007/Lower_Arm_L
+        weight: 1
+      - path: Armature/Root/Stomach/Chest
+        weight: 1
+      - path: Armature/Root/Stomach/Chest/head
+        weight: 1
+      - path: Armature/Root/Stomach/Upper_Leg_L
+        weight: 1
+      - path: Armature/Root/Stomach/Upper_Leg_L/Lower_Leg_L
+        weight: 1
+      - path: Armature/Root/Stomach/Upper_Leg_L/Lower_Leg_L/foot_L
+        weight: 1
+      - path: Armature/Root/Stomach/Upper_Leg_L/Lower_Leg_L/foot_R
+        weight: 1
+      - path: Armature/Root/Stomach/Upper_Leg_R
+        weight: 1
+      - path: Armature/Root/Stomach/Upper_Leg_R/Lower_Leg_R
+        weight: 1
+      - path: Bob
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: wind
+      takeName: ArmatureAction
+      firstFrame: 80
+      lastFrame: 89
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Root
+        weight: 1
+      - path: Armature/Root/Stomach
+        weight: 1
+      - path: Armature/Root/Stomach/Bone
+        weight: 1
+      - path: Armature/Root/Stomach/Bone/Lower_Arm_R
+        weight: 1
+      - path: Armature/Root/Stomach/Bone_007
+        weight: 1
+      - path: Armature/Root/Stomach/Bone_007/Lower_Arm_L
+        weight: 1
+      - path: Armature/Root/Stomach/Chest
+        weight: 1
+      - path: Armature/Root/Stomach/Chest/head
+        weight: 1
+      - path: Armature/Root/Stomach/Upper_Leg_L
+        weight: 1
+      - path: Armature/Root/Stomach/Upper_Leg_L/Lower_Leg_L
+        weight: 1
+      - path: Armature/Root/Stomach/Upper_Leg_L/Lower_Leg_L/foot_L
+        weight: 1
+      - path: Armature/Root/Stomach/Upper_Leg_L/Lower_Leg_L/foot_R
+        weight: 1
+      - path: Armature/Root/Stomach/Upper_Leg_R
+        weight: 1
+      - path: Armature/Root/Stomach/Upper_Leg_R/Lower_Leg_R
+        weight: 1
+      - path: Bob
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: unwind
+      takeName: ArmatureAction
+      firstFrame: 60
+      lastFrame: 82
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Root
+        weight: 1
+      - path: Armature/Root/Stomach
+        weight: 1
+      - path: Armature/Root/Stomach/Bone
+        weight: 1
+      - path: Armature/Root/Stomach/Bone/Lower_Arm_R
+        weight: 1
+      - path: Armature/Root/Stomach/Bone_007
+        weight: 1
+      - path: Armature/Root/Stomach/Bone_007/Lower_Arm_L
+        weight: 1
+      - path: Armature/Root/Stomach/Chest
+        weight: 1
+      - path: Armature/Root/Stomach/Chest/head
+        weight: 1
+      - path: Armature/Root/Stomach/Upper_Leg_L
+        weight: 1
+      - path: Armature/Root/Stomach/Upper_Leg_L/Lower_Leg_L
+        weight: 1
+      - path: Armature/Root/Stomach/Upper_Leg_L/Lower_Leg_L/foot_L
+        weight: 1
+      - path: Armature/Root/Stomach/Upper_Leg_L/Lower_Leg_L/foot_R
+        weight: 1
+      - path: Armature/Root/Stomach/Upper_Leg_R
+        weight: 1
+      - path: Armature/Root/Stomach/Upper_Leg_R/Lower_Leg_R
+        weight: 1
+      - path: Bob
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -67,7 +415,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    rootMotionBoneName: 
+    rootMotionBoneName: Root
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2
